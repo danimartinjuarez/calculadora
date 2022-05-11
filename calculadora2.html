@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Calculadora con java</title>
+</head>
+<body>
+	<h1>Bienvenidos a la magia de las matematicas</h1>
+	<form action="#" name="calculadora" >
+		<label>primer numero<input type="number" name="operando1" value="0" id="operando1" /></label>
+		<label>segundo numero<input type="number" name="operando2" value="0" id="operando2" /></label>
+		<label><input type="radio" name="operacion" value="sumar"/>sumar</label>
+		<label><input type="radio" name="operacion" value="restar" />restar</label>
+		<label><input type="radio" name="operacion" value="multiplicar" />multiplicar</label>
+		<label><input type="radio" name="operacion" value="dividir" />dividir</label>
+		<button id="boton" type="button">calcula</button>
+		<label>resultado<input type="number" name="resultado" disabled id="resultado"/></label>
+	</form>
+	<script type="text/javascript">
+		let boton = document.getElementById('boton');
+		boton.onclick = function calcula() {
+			let operando1 = parseFloat(document.getElementById("operando1").value);
+			let operando2 = parseFloat(document.getElementById("operando2").value);
+			let operacion = document.querySelector('input[name="operacion"]:checked').value;
+			switch (operacion){
+			case "sumar":
+				var resultado = operando1+operando2;
+				break;
+			case "restar":
+				var resultado = operando1-operando2;
+				break;
+			case "multiplicar":
+				var resultado = operando1*operando2;
+				break;
+			case "dividir":
+				var resultado = operando1/operando2;
+				break;
+			};
+			let mresult = document.getElementById("resultado");
+			mresult.value = resultado;
+			};
+	</script>
+</body>
